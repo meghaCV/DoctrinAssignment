@@ -5,6 +5,7 @@ import time
 import openpyxl
 from selenium.webdriver.support.wait import WebDriverWait
 
+
 path = "/Users/chandrashekarbasavaraj/Taskoutput/Data.xlsx"
 workbook = openpyxl.load_workbook(path)
 worksheet = workbook.active
@@ -12,8 +13,13 @@ worksheet = workbook.active
 rows = worksheet.max_row
 col = worksheet.max_column
 
-driver = webdriver.Chrome(
-    executable_path="/Users/chandrashekarbasavaraj/Documents/chromeDriversSelenium/chromedriver-1")
+driver = webdriver.Firefox(
+ executable_path="/Users/chandrashekarbasavaraj/Documents/geckodriver/geckodriver")
+
+
+
+#driver = webdriver.Chrome(
+#  executable_path="/Users/chandrashekarbasavaraj/Documents/chromeDriversSelenium/chromedriver-1")
 driver.implicitly_wait(30)
 driver.maximize_window()
 driver.get("https://doctrin.se/")
